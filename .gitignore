@@ -1,0 +1,7 @@
+bin/
+obj/
+
+build
+build.old
+ignore.stderr
+ignore.stdout
