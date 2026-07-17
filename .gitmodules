@@ -1,6 +1,6 @@
 [submodule "deps/nob.h"]
 	path = deps/nob.h
-	url = git@192.168.1.10:hosted/nob.h
+	url = https://github.com/tsoding/nob.h
 [submodule "deps/ungrateful"]
 	path = deps/ungrateful
 	url = git@192.168.1.10:repos/ungrateful
