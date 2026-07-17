@@ -1,30 +1,32 @@
+#define CYNIC_NO_PREFIXES
+#define UNGRATEFUL_NO_PREFIXES
 #include <cynic.h>
 
 int main(int argc, char **argv) {
     u8 ch;
-    Un_Buffer buf;
-    Cyn_Json_Node *jn;
+    Buffer buf;
+    Json_Node *jn;
 
-    un_init(UN_MB(1));
+    init(MB(1));
 
-    UN_ASSERT(argc == 3);
+    ASSERT(argc == 3);
 
     ch = argv[2][0];
 
-    if (!cyn_file_load(UN_STR(argv[1]), &buf, un_alloc_temp_get())) {
-        UN_UNREACHABLE();
+    if (!file_load(STR(argv[1]), &buf, alloc_temp_get())) {
+        UNREACHABLE();
     }
 
-    jn = cyn_json_parse(un_string_from_buffer(buf), UN_STR(argv[1]), un_alloc_temp_get());
+    jn = json_parse(string_from_buffer(buf), STR(argv[1]), alloc_temp_get());
 
     switch (ch) {
         case 'y':
-            UN_ASSERT(jn != NULL);
-            UN_ASSERT(jn->kind != CYN_JSON_NODE_ERROR);
+            ASSERT(jn != NULL);
+            ASSERT(jn->kind != JSON_NODE_ERROR);
             break;
         case 'n':
             if (jn != NULL) {
-                UN_ASSERT(jn->kind == CYN_JSON_NODE_ERROR);
+                ASSERT(jn->kind == JSON_NODE_ERROR);
             }
             break;
         case 'i':

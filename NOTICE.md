@@ -1,0 +1,3 @@
+- Json test suite. [License](deps/JSONTestSuite/LICENSE).
+- Nob.h. [License](deps/nob.h/LICENSE).
+- Ungrateful. Private, no source code available (Copyright nonsensayer, bonmas14).
