@@ -18,16 +18,14 @@ int main(int argc, char **argv) {
     }
 
     jn = json_parse(string_from_buffer(buf), STR(argv[1]), alloc_temp_get());
+    if (jn == NULL) return 10000;
 
     switch (ch) {
         case 'y':
-            ASSERT(jn != NULL);
             ASSERT(jn->kind != JSON_NODE_ERROR);
             break;
         case 'n':
-            if (jn != NULL) {
-                ASSERT(jn->kind == JSON_NODE_ERROR);
-            }
+            ASSERT(jn->kind == JSON_NODE_ERROR);
             break;
         case 'i':
             break;
